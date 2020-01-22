@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Zhen Jiu Xue Search tool</title>
+  <link rel="stylesheet" type="text/css" href="../style/index.css">
+  <link rel="stylesheet" type="text/css" href="../style/xueSearchStyle.css">
+</head>
+<body>
+	<header>
+		<h1 class="header">Поиск точек</h1>
+	</header>
+  
+  
+ <div class="sidenav">
+  <a href="../index.html" style="strong">Главная</a>
+  <a href="concepts.html">Терминология</a>
+  <button class="dropdown-btn" >Точки 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="mainXueList.html">Основные точки</a>
+    <a href="specialXueGroups.html">Группы особых точек</a>    
+  </div>  
+  <button class="dropdown-btn" >Синдромы 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Общие синдромы</a>
+    <a href="#">Синдромы-сценарии</a>    
+  </div>
+  <button class="dropdown-btn" >Рецепты 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>  
+  <button class="dropdown-btn" >Изучение 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="didactic_tools.html">Дидактические материалы</a>
+    <a href="didactic_tools.html">Поиск точек</a>    
+  </div>
+  <a href="diagnosis.html">Диагностика</a>
+  <a href="literature.html">Литература</a>
+</div>
+  
+
+  <main class="main">
+	
+	
+	<h3>На этой странице можно найти среди основного массива точек нужную по нескольким критериям:</h3>
+	
+	
+	
+	
+	<form name="textfield" autocomplete="off" >
+		
+			По индексу: <span class="autocomplete" style="width:300px;"><input type="text" name="T1" size="20" placeholder="Xue Index" id="xueIndex" onfocus="myAutocomplete(this, fullIndexArray)" style="border: 1px solid black;
+  border-radius: 4px; padding: 5px">			</span>
+			<input type="button" value="Find" name="B1" border="1px" style="border: 1px solid black;
+  border-radius: 4px; padding: 5px" onClick="FindXueByIndex()">   
+	</form>
+<br>	
+	<form name="textfield" autocomplete="off" >
+		
+			По названию: <span class="autocomplete" style="width:300px;"><input type="text" name="T1" size="20" placeholder="Xue Name" id="xueName" onfocus="myAutocomplete(this, fullNameArray)" style="border: 1px solid black;
+  border-radius: 4px; padding: 5px">			</span>
+			<input type="button" value="Find" name="B1" border="1px" style="border: 1px solid black;
+  border-radius: 4px; padding: 5px" onClick="FindXueByName()">   
+	</form>
+<br>
+	<form name="textfield" autocomplete="off" >
+		
+			По симптому: <span class="autocomplete" style="width:300px;"><input type="text" name="T1" size="20" placeholder="Symptom" id="xueSymptom" onfocus="myAutocomplete(this, fullSymptomsArray)" style="border: 1px solid black;
+  border-radius: 4px; padding: 5px">			</span>
+			<input type="button" value="Find" name="B1" border="1px" style="border: 1px solid black;
+  border-radius: 4px; padding: 5px" onClick="FindXueBySymptom()">   
+	</form>
+	
+
+  <p> 
+	
+	<div>  Информация по найденным точкам: <br>
+		<div id="outputXueList" class="xuePrint"></div>
+		
+	</div>
+  </p>
+  
+  </main>
+  
+  <script type="text/javascript" src="../js/xueDatabase.js">	
+  </script>
+  <script type="text/javascript" src="../js/xueFunctions.js">	
+  </script>
+  <script type="text/javascript" src="../js/index.js">	
+  </script>
+</body>
+</html>
+
+<!--oninput="myAutocomplete(this.id, fullIndexArray)"
